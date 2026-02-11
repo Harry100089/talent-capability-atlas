@@ -26,7 +26,8 @@ Return STRICT JSON:
     "skill": "string",
     "confidence": 0-1,
     "relevance_to_role": 0-1,
-    "supporting_text": "quote"
+    "artifact_id": "string",
+    "supporting_text": "exact quote from that artifact"
   }}
 ]
 

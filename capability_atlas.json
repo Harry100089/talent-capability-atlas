@@ -1,223 +1,85 @@
 {
   "org_hint": "Search relevance team",
   "role_target": "Senior Applied Scientist",
+  "role_requirements": {
+    "critical_skills": [
+      "deep learning for ranking",
+      "large-scale feature engineering",
+      "search relevance metrics & experimentation",
+      "semantic understanding of queries"
+    ]
+  },
   "profiles": [
     {
       "name": "Alice",
       "skills": [
         {
-          "skill": "A/B testing",
+          "skill": "search relevance metrics & experimentation",
           "confidence": 0.95,
+          "relevance_to_role": 1.0,
           "evidence": [
             {
               "source": "github_commit",
               "id": "commit-2",
-              "snippet": "Add AB test framework",
+              "snippet": "Add AB test framework for ranking experiments",
               "timestamp": "2024-10-10"
-            },
-            {
-              "source": "github_commit",
-              "id": "commit-1",
-              "snippet": "Add AB test framework",
-              "timestamp": "2024-10-02"
-            },
-            {
-              "source": "rfc",
-              "id": "rfc-1",
-              "snippet": "Add AB test framework",
-              "timestamp": "2024-09-15"
             }
           ]
         },
         {
-          "skill": "BM25",
+          "skill": "search relevance metrics & experimentation",
           "confidence": 0.9,
+          "relevance_to_role": 1.0,
           "evidence": [
-            {
-              "source": "github_commit",
-              "id": "commit-2",
-              "snippet": "Refactor BM25 scorer",
-              "timestamp": "2024-10-10"
-            },
-            {
-              "source": "github_commit",
-              "id": "commit-1",
-              "snippet": "Refactor BM25 scorer",
-              "timestamp": "2024-10-02"
-            },
             {
               "source": "rfc",
               "id": "rfc-1",
-              "snippet": "Refactor BM25 scorer",
+              "snippet": "Defines offline metrics and evaluation harness for relevance experiments",
               "timestamp": "2024-09-15"
             }
           ]
         },
         {
-          "skill": "ranking evaluation",
-          "confidence": 0.95,
+          "skill": "large-scale feature engineering",
+          "confidence": 0.7,
+          "relevance_to_role": 0.8,
           "evidence": [
             {
               "source": "github_commit",
-              "id": "commit-2",
-              "snippet": "improve ranking evaluation",
-              "timestamp": "2024-10-10"
-            },
-            {
-              "source": "github_commit",
               "id": "commit-1",
-              "snippet": "improve ranking evaluation",
+              "snippet": "Refactor BM25 scorer and improve ranking evaluation",
               "timestamp": "2024-10-02"
-            },
-            {
-              "source": "rfc",
-              "id": "rfc-1",
-              "snippet": "improve ranking evaluation",
-              "timestamp": "2024-09-15"
-            }
-          ]
-        },
-        {
-          "skill": "offline metrics",
-          "confidence": 0.85,
-          "evidence": [
-            {
-              "source": "github_commit",
-              "id": "commit-2",
-              "snippet": "Defines offline metrics",
-              "timestamp": "2024-10-10"
-            },
-            {
-              "source": "github_commit",
-              "id": "commit-1",
-              "snippet": "Defines offline metrics",
-              "timestamp": "2024-10-02"
-            },
-            {
-              "source": "rfc",
-              "id": "rfc-1",
-              "snippet": "Defines offline metrics",
-              "timestamp": "2024-09-15"
             }
           ]
         }
+      ],
+      "growth_plan": [
+        "Lead an end-to-end project that upgrades the existing data-pipeline to generate large-scale, query-level ranking features (n-grams, embeddings, CTR stats) for a deep-learning ranking model; document the pipeline design, performance benchmarks, and lessons learned in an internal tech blog to showcase large-scale feature engineering expertise.",
+        "Partner with the search relevance team to design and run an A/B test that compares a Transformer-based semantic re-ranker against the current BM25 baseline; own the experimentation protocol (hypothesis, power analysis, metric selection using NDCG@10, MRR, and online business KPIs) and present the statistically significant results at the next company-wide ML guild meeting.",
+        "Enroll in the ‘Advanced Deep Learning for Search & Recommendations’ nano-degree and apply each module by iteratively fine-tuning a BERT cross-encoder on proprietary query-product pairs; publish the converged model, code, and semantic-query-understanding ablation studies to the internal model zoo, then host a lunch-and-learn to mentor peers and cement Senior Applied Scientist visibility."
       ]
     },
     {
       "name": "Bob",
       "skills": [
         {
-          "skill": "CI/CD pipeline configuration",
+          "skill": "search relevance metrics & experimentation",
           "confidence": 0.9,
+          "relevance_to_role": 0.95,
           "evidence": [
-            {
-              "source": "github_commit",
-              "id": "commit-4",
-              "snippet": "fix CI pipeline",
-              "timestamp": "2024-09-18"
-            },
             {
               "source": "jira_ticket",
               "id": "ticket-1",
-              "snippet": "fix CI pipeline",
+              "snippet": "Implement NDCG and offline metrics checks for ranking models",
               "timestamp": "2024-09-10"
-            },
-            {
-              "source": "github_commit",
-              "id": "commit-3",
-              "snippet": "fix CI pipeline",
-              "timestamp": "2024-08-20"
             }
           ]
         },
         {
-          "skill": "Automated testing",
-          "confidence": 0.85,
-          "evidence": [
-            {
-              "source": "github_commit",
-              "id": "commit-4",
-              "snippet": "Setup automated evaluation tests",
-              "timestamp": "2024-09-18"
-            },
-            {
-              "source": "jira_ticket",
-              "id": "ticket-1",
-              "snippet": "Setup automated evaluation tests",
-              "timestamp": "2024-09-10"
-            },
-            {
-              "source": "github_commit",
-              "id": "commit-3",
-              "snippet": "Setup automated evaluation tests",
-              "timestamp": "2024-08-20"
-            }
-          ]
-        },
-        {
-          "skill": "NDCG metrics",
-          "confidence": 0.9,
-          "evidence": [
-            {
-              "source": "github_commit",
-              "id": "commit-4",
-              "snippet": "Implement NDCG",
-              "timestamp": "2024-09-18"
-            },
-            {
-              "source": "jira_ticket",
-              "id": "ticket-1",
-              "snippet": "Implement NDCG",
-              "timestamp": "2024-09-10"
-            },
-            {
-              "source": "github_commit",
-              "id": "commit-3",
-              "snippet": "Implement NDCG",
-              "timestamp": "2024-08-20"
-            }
-          ]
-        },
-        {
-          "skill": "Ranking models evaluation",
-          "confidence": 0.85,
-          "evidence": [
-            {
-              "source": "github_commit",
-              "id": "commit-4",
-              "snippet": "NDCG and offline metrics checks for ranking models",
-              "timestamp": "2024-09-18"
-            },
-            {
-              "source": "jira_ticket",
-              "id": "ticket-1",
-              "snippet": "NDCG and offline metrics checks for ranking models",
-              "timestamp": "2024-09-10"
-            },
-            {
-              "source": "github_commit",
-              "id": "commit-3",
-              "snippet": "NDCG and offline metrics checks for ranking models",
-              "timestamp": "2024-08-20"
-            }
-          ]
-        },
-        {
-          "skill": "Feature pipeline migration",
+          "skill": "large-scale feature engineering",
           "confidence": 0.8,
+          "relevance_to_role": 0.85,
           "evidence": [
-            {
-              "source": "github_commit",
-              "id": "commit-4",
-              "snippet": "Migrate feature pipeline to new deployment infra",
-              "timestamp": "2024-09-18"
-            },
-            {
-              "source": "jira_ticket",
-              "id": "ticket-1",
-              "snippet": "Migrate feature pipeline to new deployment infra",
-              "timestamp": "2024-09-10"
-            },
             {
               "source": "github_commit",
               "id": "commit-3",
@@ -226,152 +88,151 @@
             }
           ]
         }
+      ],
+      "growth_plan": [
+        "Within 30 days, implement a PyTorch-based ranking model on AWS SageMaker using a public Learning-to-Rank dataset (e.g., MSLR-WEB30k), add pairwise hinge loss, and tune it until you achieve published SOTA NDCG@10; document the infra cost and share the repo for code-review feedback to demonstrate deep-learning-for-ranking proficiency.",
+        "Over the next 6 weeks, build an end-to-end near-real-time feature pipeline with Flink on Kubernetes that ingests clickstream data, computes 50M event-level features daily, backfills with point-in-time correctness, and surfaces feature importance via SHAP; integrate it into your company’s search stack and run an A/B test that lifts CTR by at least 2% to showcase large-scale feature-engineering capability.",
+        "In 60 days, design a query-embedding model using sentence-transformers fine-tuned on domain-specific query-doc pairs, evaluate it offline on MAP, nDCG@10, and query-cluster purity, then launch an online experiment measuring search-relevance metrics (precision@1, nDCG, abandonment rate) with 95% power; present the semantic-understanding insights and experiment results to the Search Science leadership team to prove readiness for Senior Applied Scientist scope."
       ]
     },
     {
       "name": "Charlie",
       "skills": [
         {
-          "skill": "Data Pipeline Engineering",
-          "confidence": 0.9,
-          "evidence": [
-            {
-              "source": "jira_ticket",
-              "id": "ticket-2",
-              "snippet": "Resolve minor deployment issues affecting evaluation metrics",
-              "timestamp": "2024-08-12"
-            },
-            {
-              "source": "rfc",
-              "id": "rfc-2",
-              "snippet": "Resolve minor deployment issues affecting evaluation metrics",
-              "timestamp": "2024-08-05"
-            },
-            {
-              "source": "github_commit",
-              "id": "commit-5",
-              "snippet": "Resolve minor deployment issues affecting evaluation metrics",
-              "timestamp": "2024-07-30"
-            }
-          ]
-        },
-        {
-          "skill": "Data Processing",
-          "confidence": 0.85,
-          "evidence": [
-            {
-              "source": "jira_ticket",
-              "id": "ticket-2",
-              "snippet": "Defines metrics and pipelines for data processing",
-              "timestamp": "2024-08-12"
-            },
-            {
-              "source": "rfc",
-              "id": "rfc-2",
-              "snippet": "Defines metrics and pipelines for data processing",
-              "timestamp": "2024-08-05"
-            },
-            {
-              "source": "github_commit",
-              "id": "commit-5",
-              "snippet": "Defines metrics and pipelines for data processing",
-              "timestamp": "2024-07-30"
-            }
-          ]
-        },
-        {
-          "skill": "Infrastructure Refactoring",
+          "skill": "search relevance metrics & experimentation",
           "confidence": 0.8,
+          "relevance_to_role": 0.9,
+          "evidence": [
+            {
+              "source": "rfc",
+              "id": "rfc-2",
+              "snippet": "Defines metrics and pipelines for data processing",
+              "timestamp": "2024-08-05"
+            }
+          ]
+        },
+        {
+          "skill": "large-scale feature engineering",
+          "confidence": 0.7,
+          "relevance_to_role": 0.8,
+          "evidence": [
+            {
+              "source": "github_commit",
+              "id": "commit-5",
+              "snippet": "feature-pipeline Refactor pipelines",
+              "timestamp": "2024-07-30"
+            }
+          ]
+        },
+        {
+          "skill": "search relevance metrics & experimentation",
+          "confidence": 0.6,
+          "relevance_to_role": 0.7,
           "evidence": [
             {
               "source": "jira_ticket",
               "id": "ticket-2",
-              "snippet": "Refactor pipelines, minor fixes to infrastructure",
+              "snippet": "Resolve minor deployment issues affecting evaluation metrics",
               "timestamp": "2024-08-12"
-            },
-            {
-              "source": "rfc",
-              "id": "rfc-2",
-              "snippet": "Refactor pipelines, minor fixes to infrastructure",
-              "timestamp": "2024-08-05"
-            },
-            {
-              "source": "github_commit",
-              "id": "commit-5",
-              "snippet": "Refactor pipelines, minor fixes to infrastructure",
-              "timestamp": "2024-07-30"
             }
           ]
         }
+      ],
+      "growth_plan": [
+        "Implement a transformer-based cross-encoder on a 1B+ query-doc pair dataset to boost NDCG@10 by 3% and write a tech report on hyper-parameter tuning for ranking",
+        "Design a real-time feature pipeline that generates 500+ semantic & behavioral signals at 50k QPS using Flink and a vocabulary-pruned WordPiece tokenizer; benchmark latency vs. offline AUC",
+        "Own an A/B test roadmap for search relevance that ties click-skip entropy, perceived-relevance human ratings and long-session revenue to ship a 0.5% CTR gain and present learnings to the Science & Product boards"
       ]
     }
   ],
   "domain_ownership": {
-    "A/B testing": [
-      "Alice"
+    "search relevance metrics & experimentation": [
+      {
+        "owner": "Alice",
+        "confidence": 0.95,
+        "relevance": 1.0
+      },
+      {
+        "owner": "Alice",
+        "confidence": 0.9,
+        "relevance": 1.0
+      },
+      {
+        "owner": "Bob",
+        "confidence": 0.9,
+        "relevance": 0.95
+      },
+      {
+        "owner": "Charlie",
+        "confidence": 0.8,
+        "relevance": 0.9
+      },
+      {
+        "owner": "Charlie",
+        "confidence": 0.6,
+        "relevance": 0.7
+      }
     ],
-    "BM25": [
-      "Alice"
-    ],
-    "ranking evaluation": [
-      "Alice"
-    ],
-    "offline metrics": [
-      "Alice"
-    ],
-    "CI/CD pipeline configuration": [
-      "Bob"
-    ],
-    "Automated testing": [
-      "Bob"
-    ],
-    "NDCG metrics": [
-      "Bob"
-    ],
-    "Ranking models evaluation": [
-      "Bob"
-    ],
-    "Feature pipeline migration": [
-      "Bob"
-    ],
-    "Data Pipeline Engineering": [
-      "Charlie"
-    ],
-    "Data Processing": [
-      "Charlie"
-    ],
-    "Infrastructure Refactoring": [
-      "Charlie"
+    "large-scale feature engineering": [
+      {
+        "owner": "Alice",
+        "confidence": 0.7,
+        "relevance": 0.8
+      },
+      {
+        "owner": "Bob",
+        "confidence": 0.8,
+        "relevance": 0.85
+      },
+      {
+        "owner": "Charlie",
+        "confidence": 0.7,
+        "relevance": 0.8
+      }
     ]
   },
+  "collaboration_graph": {
+    "Alice": {
+      "Bob": 2,
+      "Charlie": 2
+    },
+    "Bob": {
+      "Alice": 2,
+      "Charlie": 2
+    },
+    "Charlie": {
+      "Alice": 2,
+      "Bob": 2
+    }
+  },
   "risk_areas": [
-    "A/B testing primarily owned by Alice",
-    "BM25 primarily owned by Alice",
-    "ranking evaluation primarily owned by Alice",
-    "offline metrics primarily owned by Alice",
-    "CI/CD pipeline configuration primarily owned by Bob",
-    "Automated testing primarily owned by Bob",
-    "NDCG metrics primarily owned by Bob",
-    "Ranking models evaluation primarily owned by Bob",
-    "Feature pipeline migration primarily owned by Bob",
-    "Data Pipeline Engineering primarily owned by Charlie",
-    "Data Processing primarily owned by Charlie",
-    "Infrastructure Refactoring primarily owned by Charlie"
+    {
+      "skill": "large-scale feature engineering",
+      "severity": "LOW",
+      "risk_score": 0.109,
+      "owners": [
+        "Alice",
+        "Bob",
+        "Charlie"
+      ]
+    },
+    {
+      "skill": "search relevance metrics & experimentation",
+      "severity": "LOW",
+      "risk_score": 0.046,
+      "owners": [
+        "Alice",
+        "Alice",
+        "Bob",
+        "Charlie",
+        "Charlie"
+      ]
+    }
   ],
-  "gaps": [
-    "Machine Learning",
-    "Ranking",
-    "Evaluation",
-    "Infrastructure",
-    "Data Pipelines"
-  ],
-  "recommendations": [
-    "Assign ranking experiments to Alice",
-    "Infra scaling to Bob",
-    "Pipeline reliability to Charlie",
-    "Encourage cross-training on evaluation frameworks"
-  ],
-  "uncertainty_note": "Artifacts limited to top recent items per person. Skill extraction derived from LLM and may contain classification noise.",
-  "growth_summary": "No previous snapshot available.",
-  "generated_at": "2026-02-11 08:05:41.991426"
+  "critical_coverage": {
+    "Alice": 2.41,
+    "Bob": 1.535,
+    "Charlie": 1.7
+  },
+  "generated_at": "2026-02-11 10:04:24.329917"
 }

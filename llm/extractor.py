@@ -8,7 +8,7 @@ def build_artifact_text(artifacts):
     texts = []
     for a in artifacts:
         texts.append(
-            f"{a.get('title', '')} {a.get('message', '')} {a.get('summary', '')}"
+            f"artifact_id: {a.get('id', '')}, {a.get('title', '')} {a.get('repo', '')} {a.get('message', '')} {a.get('summary', '')}"
         )
     return "\n".join(texts)
 
@@ -20,8 +20,12 @@ def extract_skills(artifacts, critical_skills):
 
     data = json.loads(output)
 
+    artifact_map = {a["id"]: a for a in artifacts}
+
     results = []
     for item in data:
+        a = artifact_map[item["artifact_id"]]
+
         evidence = [
             Evidence(
                 source=a["type"],
@@ -29,7 +33,6 @@ def extract_skills(artifacts, critical_skills):
                 snippet=item["supporting_text"],
                 timestamp=a.get("timestamp"),
             )
-            for a in artifacts
         ]
 
         results.append(

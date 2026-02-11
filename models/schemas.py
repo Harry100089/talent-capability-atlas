@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Any
 
 
 class Evidence(BaseModel):
@@ -31,8 +31,8 @@ class CapabilityAtlas(BaseModel):
     role_target: str
     role_requirements: RoleRequirements
     profiles: List[PersonProfile]
-    domain_ownership: Dict[str, Dict]
+    domain_ownership: Dict[str, List[Dict[str, Any]]]
     collaboration_graph: Dict[str, Dict[str, int]]
-    risk_areas: List[str]
-    critical_coverage: dict
+    risk_areas: List[Dict[str, Any]]
+    critical_coverage: Dict[str, float]
     generated_at: str
