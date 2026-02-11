@@ -101,7 +101,7 @@ class TalentAtlasEngine:
         # Save version in storage for future refresh strategy
         os.makedirs("storage", exist_ok=True)
         timestamp = atlas.generated_at.replace(" ", "_").replace(":", "-")
-        version_file = f"storage/atlas_v{atlas.metadata['version']}_{timestamp}.json"
+        version_file = f"storage/atlas_v{timestamp}.json"
         with open(version_file, "w") as f:
             f.write(atlas.model_dump_json(indent=2))
         
