@@ -24,6 +24,7 @@ AI agent that builds a structured capability map and gives recommendations from 
 * Collaboration graph
 * Risk ranking (coverage + criticality aware)
 * Personalized growth plans
+* New experiment with staffing recommendations
 * Timestamp
 
 ---
