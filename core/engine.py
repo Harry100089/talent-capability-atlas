@@ -20,6 +20,18 @@ class TalentAtlasEngine:
 
         self.adapter = MockArtifactAdapter()
 
+    def compute_critical_coverage(self, profiles, critical_skills):
+        coverage = {}
+
+        for p in profiles:
+            score = 0
+            for s in p.skills:
+                if s.skill in critical_skills:
+                    score += s.relevance_to_role * s.confidence
+            coverage[p.name] = round(score, 3)
+
+        return coverage
+
     def run(self):
         people = self.inputs["people_list"]
         role_target = self.inputs["role_target"]
@@ -33,7 +45,7 @@ class TalentAtlasEngine:
         for person in people:
             artifacts = self.adapter.get_artifacts(person, budget=5)
 
-            raw_skills = extract_skills(artifacts)
+            raw_skills = extract_skills(artifacts, role_requirements.critical_skills)
             raw_skill_names = [s.skill for s in raw_skills]
 
             normalized = normalize_skills(raw_skill_names)
@@ -53,6 +65,9 @@ class TalentAtlasEngine:
                 )
             )
 
+            critical_coverage = self.compute_critical_coverage(profiles, role_requirements.critical_skills)
+
+
         domain_map = compute_domain_ownership(profiles)
         risks = score_risks(domain_map, role_requirements.critical_skills)
         collaboration = build_collaboration_graph(profiles)
@@ -65,6 +80,7 @@ class TalentAtlasEngine:
             domain_ownership=domain_map,
             collaboration_graph=collaboration,
             risk_areas=risks,
+            critical_coverage=critical_coverage,
             generated_at=str(datetime.now()),
         )
 

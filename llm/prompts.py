@@ -13,15 +13,19 @@ Return STRICT JSON:
 """
 
 
-def skill_extraction_prompt(artifact_text):
+def skill_extraction_prompt(artifact_text, critical_skills):
     return f"""
-Extract technical skills from artifacts.
+Extract technical skills from these artifacts.
+
+Critical skills for the target role:
+{critical_skills}
 
 Return STRICT JSON:
 [
   {{
     "skill": "string",
     "confidence": 0-1,
+    "relevance_to_role": 0-1,
     "supporting_text": "quote"
   }}
 ]
@@ -55,4 +59,7 @@ Target role: {role_target}
 Critical skills: {critical_skills}
 
 Return STRICT JSON list of 3 specific growth recommendations.
+{{
+  "growth_recommendations": ["Recommendation 1", "Recommendation 2", "Recommendation 3"]
+}}
 """

@@ -12,6 +12,7 @@ class Evidence(BaseModel):
 class SkillSignal(BaseModel):
     skill: str
     confidence: float
+    relevance_to_role: float  
     evidence: List[Evidence]
 
 
@@ -33,4 +34,5 @@ class CapabilityAtlas(BaseModel):
     domain_ownership: Dict[str, Dict]
     collaboration_graph: Dict[str, Dict[str, int]]
     risk_areas: List[str]
+    critical_coverage: dict
     generated_at: str

@@ -13,9 +13,9 @@ def build_artifact_text(artifacts):
     return "\n".join(texts)
 
 
-def extract_skills(artifacts):
+def extract_skills(artifacts, critical_skills):
     text = build_artifact_text(artifacts)
-    prompt = skill_extraction_prompt(text)
+    prompt = skill_extraction_prompt(text, critical_skills)
     output = call_llm(prompt)
 
     data = json.loads(output)
@@ -36,6 +36,7 @@ def extract_skills(artifacts):
             SkillSignal(
                 skill=item["skill"],
                 confidence=float(item["confidence"]),
+                relevance_to_role=float(item["relevance_to_role"]),
                 evidence=evidence,
             )
         )
