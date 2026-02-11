@@ -1,17 +1,10 @@
 # Talent Capability Atlas
 
-An AI agent that builds a capability map for a team based on engineering artifacts.
-
-It:
-* Aggregates skill signals from commits, RFCs, and tickets
-* Infers ownership and detects single points of failure
-* Identifies gaps relative to a target role
-* Suggests staffing and growth opportunities
-* Tracks skill changes over time
+AI agent that builds a structured capability map and gives recommendations from engineering artifacts.
 
 ## Input
 
-Provided via `input.json`:
+`input.json`
 
 ```json
 {
@@ -23,121 +16,109 @@ Provided via `input.json`:
 
 ## Output
 
-The agent produces a structured `CapabilityAtlas` including:
+`capability_atlas.json` containing:
 
-* Skill profile per person (with confidence + evidence)
+* Role requirements (LLM-defined)
+* Per-person skill profile (confidence + evidence)
 * Domain ownership map
-* Risk flags (single-owner domains)
-* Skill gaps vs target role
-* Staffing suggestions
-* Growth summary (if previous snapshot exists)
-* Uncertainty note
+* Collaboration graph
+* Risk ranking (coverage + criticality aware)
+* Personalized growth plans
+* Timestamp
 
+---
 
-## How It Works
-Input
-  ↓
-Plan Retrieval
-  ↓
-Budgeted Artifact Fetch
-  ↓
-LLM Skill Extraction
-  ↓
-Skill Normalization
-  ↓
-Ownership Inference
-  ↓
-Collaboration Graph
-  ↓
-Risk & Gap Analysis
-  ↓
-Personalized Growth Plans
-  ↓
-Persist Snapshot
+# Architecture
 
-### 1. Retrieval (Budgeted)
-
-For each person:
-
-* Fetch most recent artifacts (mocked GitHub, RFCs, Jira)
-* Prioritize recency
-* Limit to top-N per person to simulate cost constraints
-
-### 2. Skill Extraction
-
-* Use HuggingFace LLM to extract structured skill signals
-* Return JSON with confidence scores
-* Attach artifact-backed evidence
-
-### 3. Aggregation
-
-* Merge skill signals across team
-* Infer domain ownership
-* Flag single points of failure
-* Compare against role target to detect gaps
-
-### 4. Refresh & Change Detection
-
-* Save snapshot of last run
-* On next run:
-
-  * Compare skill sets
-  * Detect new expertise
-  * Recompute risk areas
-
-## Data Model
-
-Artifacts are mocked with this structure:
-
-```json
-{
-  "id": "unique-id",
-  "type": "github_commit | rfc | jira_ticket",
-  "author | assignee": "person-name",
-  "message | summary": "text with skill signals",
-  "timestamp": "YYYY-MM-DD",
-  "url": "source-link"
-}
+```
+- Input
+- LLM: define role requirements
+- Retrieve artifacts (budgeted, adapter-based)
+- LLM: extract skills
+- LLM: normalize to canonical taxonomy
+- Ownership aggregation
+- Collaboration graph
+- Risk scoring
+- LLM: generate growth plans
+- Persist snapshot
 ```
 
-Care was taken so skills are inferred from the mocks and not pre-labeled.
+Most logic lives in `engine`, `planner`, `llm`, and `tools`.
 
-## Refresh Strategy
+---
 
-* Store previous `CapabilityAtlas` snapshot
-* On re-run:
+# Key Design Decisions
 
-  * Diff skill sets per person
-  * Flag newly emerged skills
-  * Update risk and ownership signals
-* Designed for periodic execution (e.g., weekly)
+### Decision Making by LLM
 
-## Decision Logic
-### Artifact Budgeting
-* Retrieve top N artifacts per person
-* Prioritize recency
-* RFCs weighted higher for ownership inference
+LLM is used for:
 
-### Ownership Ranking
-* RFC authorship = 3x weight
-* Repeated subsystem commits increase ownership confidence
-### Risk Ranking
-* Domains required for org_hint weighted higher
+* Role capability definition
+* Skill extraction
+* Skill normalization
+* Growth planning
 
-## Uncertainty Handling
+### Artifact Adapter and Data Tools
 
-* Per-skill confidence score from LLM
-* Explicit uncertainty note in output
-* Limited artifact budget per person
-* Evidence attached to every skill
+Artifacts accessed via:
 
-## Run
-Create a .env
+```python
+class ArtifactAdapter:
 ```
-HF_API_KEY=hugging_face_api_key_here
+
+Current: `MockArtifactAdapter`
+Late can be swapped with GitHub/Jira/etc.
+
+
+### Canonical Taxonomy
+
+```python
+CANONICAL_TAXONOMY = [...]
 ```
+
+This is a predefined list organizational skill vocabulary. Used to normalize skills output from the LLM. The assumption is in production this would  come from config or an org-level competency framework.
+
+
+### Ownership & Risk
+
+Ownership inferred from:
+
+* Skill frequency
+* Confidence
+* Artifact signals (RFC > commit)
+
+Risk considers:
+
+* Single-owner concentration
+* Whether skill is critical to role_target
+
+
+### Collaboration Graph
+
+Edge weight = number of shared normalized skills.
+Approximates knowledge overlap.
+
+---
+
+# Assumptions / Mocks
+
+* Artifacts are mocked (commits, RFCs, tickets)
+* Skills are inferred, not pre-labeled
+* Retrieval is budget-limited (API / scraper costs)
+* LLM JSON output assumed to be well-formed
+* No real API integration
+
+---
+
+# To Run
+Create an .env with the following:
+```
+HF_API_KEY=hugging_face_api_key_goes_here
+```
+Run the following:
 
 ```bash
+# optionally but recommended to use a venv
 python -m venv venv
 source venv/bin/activate
 
