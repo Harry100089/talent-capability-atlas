@@ -40,6 +40,7 @@ AI agent that builds a structured capability map and gives recommendations from 
 - Collaboration graph
 - Risk scoring
 - LLM: generate growth plans
+- LLM: Recommend staffing for a new experiment
 - Persist snapshot
 ```
 
@@ -57,6 +58,7 @@ LLM is used for:
 * Skill extraction
 * Skill normalization
 * Growth planning
+* Experiment suggestion & staffing
 
 ### Artifact Adapter and Data Tools
 
@@ -67,7 +69,7 @@ class ArtifactAdapter:
 ```
 
 Current: `MockArtifactAdapter`
-Late can be swapped with GitHub/Jira/etc.
+Late can be swapped with GitHub/Jira/etc. integrations
 
 
 ### Canonical Taxonomy

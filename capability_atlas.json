@@ -3,10 +3,9 @@
   "role_target": "Senior Applied Scientist",
   "role_requirements": {
     "critical_skills": [
-      "deep learning for ranking",
-      "large-scale feature engineering",
-      "search relevance metrics & experimentation",
-      "semantic understanding of queries"
+      "large-scale ML for ranking/relevance",
+      "deep query understanding & semantic matching",
+      "online experimentation & causal inference at scale"
     ]
   },
   "profiles": [
@@ -14,8 +13,8 @@
       "name": "Alice",
       "skills": [
         {
-          "skill": "search relevance metrics & experimentation",
-          "confidence": 0.95,
+          "skill": "online experimentation & causal inference at scale",
+          "confidence": 0.9,
           "relevance_to_role": 1.0,
           "evidence": [
             {
@@ -27,22 +26,9 @@
           ]
         },
         {
-          "skill": "search relevance metrics & experimentation",
-          "confidence": 0.9,
-          "relevance_to_role": 1.0,
-          "evidence": [
-            {
-              "source": "rfc",
-              "id": "rfc-1",
-              "snippet": "Defines offline metrics and evaluation harness for relevance experiments",
-              "timestamp": "2024-09-15"
-            }
-          ]
-        },
-        {
-          "skill": "large-scale feature engineering",
-          "confidence": 0.7,
-          "relevance_to_role": 0.8,
+          "skill": "large-scale ML for ranking/relevance",
+          "confidence": 0.8,
+          "relevance_to_role": 0.9,
           "evidence": [
             {
               "source": "github_commit",
@@ -51,21 +37,34 @@
               "timestamp": "2024-10-02"
             }
           ]
+        },
+        {
+          "skill": "large-scale ML for ranking/relevance",
+          "confidence": 0.7,
+          "relevance_to_role": 0.9,
+          "evidence": [
+            {
+              "source": "rfc",
+              "id": "rfc-1",
+              "snippet": "Defines offline metrics and evaluation harness for relevance experiments",
+              "timestamp": "2024-09-15"
+            }
+          ]
         }
       ],
       "growth_plan": [
-        "Lead an end-to-end project that upgrades the existing data-pipeline to generate large-scale, query-level ranking features (n-grams, embeddings, CTR stats) for a deep-learning ranking model; document the pipeline design, performance benchmarks, and lessons learned in an internal tech blog to showcase large-scale feature engineering expertise.",
-        "Partner with the search relevance team to design and run an A/B test that compares a Transformer-based semantic re-ranker against the current BM25 baseline; own the experimentation protocol (hypothesis, power analysis, metric selection using NDCG@10, MRR, and online business KPIs) and present the statistically significant results at the next company-wide ML guild meeting.",
-        "Enroll in the ‘Advanced Deep Learning for Search & Recommendations’ nano-degree and apply each module by iteratively fine-tuning a BERT cross-encoder on proprietary query-product pairs; publish the converged model, code, and semantic-query-understanding ablation studies to the internal model zoo, then host a lunch-and-learn to mentor peers and cement Senior Applied Scientist visibility."
+        "Architect and productionize an end-to-end large-scale ranking system using distributed frameworks (Spark/Flink + parameter servers) that handles >100 M queries/day with online model updates, then publish the design trade-offs at a top-tier ML systems conference",
+        "Design and deploy a deep query–document semantic-matching model that leverages large-scale pre-trained language models (e.g., semantic ID-based ColBERT) and fine-tune it on domain-specific click-through data; run an A/B test showing >3 % relevance lift and write a technical deep-dive shared company-wide",
+        "Lead a cross-team initiative to build a real-time causal-inference platform using switchback and synthetic-control designs at 10× scale; mentor two junior scientists, run quarterly online experiments that directly inform product road-map, and patent the novel variance-reduction technique"
       ]
     },
     {
       "name": "Bob",
       "skills": [
         {
-          "skill": "search relevance metrics & experimentation",
-          "confidence": 0.9,
-          "relevance_to_role": 0.95,
+          "skill": "large-scale ML for ranking/relevance",
+          "confidence": 0.8,
+          "relevance_to_role": 0.9,
           "evidence": [
             {
               "source": "jira_ticket",
@@ -74,165 +73,125 @@
               "timestamp": "2024-09-10"
             }
           ]
-        },
-        {
-          "skill": "large-scale feature engineering",
-          "confidence": 0.8,
-          "relevance_to_role": 0.85,
-          "evidence": [
-            {
-              "source": "github_commit",
-              "id": "commit-3",
-              "snippet": "Migrate feature pipeline to new deployment infra",
-              "timestamp": "2024-08-20"
-            }
-          ]
         }
       ],
       "growth_plan": [
-        "Within 30 days, implement a PyTorch-based ranking model on AWS SageMaker using a public Learning-to-Rank dataset (e.g., MSLR-WEB30k), add pairwise hinge loss, and tune it until you achieve published SOTA NDCG@10; document the infra cost and share the repo for code-review feedback to demonstrate deep-learning-for-ranking proficiency.",
-        "Over the next 6 weeks, build an end-to-end near-real-time feature pipeline with Flink on Kubernetes that ingests clickstream data, computes 50M event-level features daily, backfills with point-in-time correctness, and surfaces feature importance via SHAP; integrate it into your company’s search stack and run an A/B test that lifts CTR by at least 2% to showcase large-scale feature-engineering capability.",
-        "In 60 days, design a query-embedding model using sentence-transformers fine-tuned on domain-specific query-doc pairs, evaluate it offline on MAP, nDCG@10, and query-cluster purity, then launch an online experiment measuring search-relevance metrics (precision@1, nDCG, abandonment rate) with 95% power; present the semantic-understanding insights and experiment results to the Search Science leadership team to prove readiness for Senior Applied Scientist scope."
+        "Design and productionize a TensorFlow-based two-tower semantic retrieval model on 100M+ query-item pairs using distributed training (TFX + Vertex AI) to boost offline NDCG@10 by ≥5%, then back-test with replay to validate ranking lift.",
+        "Own the end-to-end online experimentation platform: migrate a high-traffic ranking surface to a 5% staggered switchback design, instrument pre/post user-level metrics, and apply CUPED+ML-based variance reduction to shrink confidence intervals by 30% and ship a statistically significant 1.2% CTR gain.",
+        "Publish an internal tech blog and external KDD/KDD tutorial on ‘Large-Scale Causal Learning for Ranking,’ detailing how sequential randomization + ML uplift models improved long-term revenue by 3% while controlling for network effects, positioning Bob as the go-to expert for causal inference at scale."
       ]
     },
     {
       "name": "Charlie",
       "skills": [
         {
-          "skill": "search relevance metrics & experimentation",
-          "confidence": 0.8,
+          "skill": "online experimentation & causal inference at scale",
+          "confidence": 0.7,
           "relevance_to_role": 0.9,
           "evidence": [
             {
               "source": "rfc",
               "id": "rfc-2",
-              "snippet": "Defines metrics and pipelines for data processing",
+              "snippet": "Evaluation framework for experiments   Defines metrics and pipelines for data processing",
               "timestamp": "2024-08-05"
-            }
-          ]
-        },
-        {
-          "skill": "large-scale feature engineering",
-          "confidence": 0.7,
-          "relevance_to_role": 0.8,
-          "evidence": [
-            {
-              "source": "github_commit",
-              "id": "commit-5",
-              "snippet": "feature-pipeline Refactor pipelines",
-              "timestamp": "2024-07-30"
-            }
-          ]
-        },
-        {
-          "skill": "search relevance metrics & experimentation",
-          "confidence": 0.6,
-          "relevance_to_role": 0.7,
-          "evidence": [
-            {
-              "source": "jira_ticket",
-              "id": "ticket-2",
-              "snippet": "Resolve minor deployment issues affecting evaluation metrics",
-              "timestamp": "2024-08-12"
             }
           ]
         }
       ],
       "growth_plan": [
-        "Implement a transformer-based cross-encoder on a 1B+ query-doc pair dataset to boost NDCG@10 by 3% and write a tech report on hyper-parameter tuning for ranking",
-        "Design a real-time feature pipeline that generates 500+ semantic & behavioral signals at 50k QPS using Flink and a vocabulary-pruned WordPiece tokenizer; benchmark latency vs. offline AUC",
-        "Own an A/B test roadmap for search relevance that ties click-skip entropy, perceived-relevance human ratings and long-session revenue to ship a 0.5% CTR gain and present learnings to the Science & Product boards"
+        "Lead an end-to-end large-scale ranking project: fine-tune a two-tower dense retrieval model on 100M+ query-item pairs using distributed TensorFlow, deploy it via TF-Recommenders to a 100-node Spark cluster, and validate offline NDCG@10 gains before A/B testing online; document the full pipeline and mentor two junior MLEs to cement ownership.",
+        "Ship a semantic query understanding service: fine-tune a domain-specific BERT cross-encoder on 5M labeled query-product pairs with in-batch negatives, add learned sparse expansion (SPLADE) for recall, and achieve +5% MRR over the current BM25 baseline; expose the encoder as a low-latency (<20 ms p99) REST endpoint and back-test with 12 months of search logs to quantify seasonal robustness.",
+        "Design and scale a sequential Bayesian experimentation platform: implement a contextual bandit with inverse-propensity-scoring and doubly-robust causal forests on 500M user-level events, enforce sample-size and bias diagnostics via automated Jupyter reports, and run a company-wide bake-off against the existing t-test framework to demonstrate 20% faster convergence and 3% revenue lift while maintaining 5% false-positive control."
       ]
     }
   ],
   "domain_ownership": {
-    "search relevance metrics & experimentation": [
-      {
-        "owner": "Alice",
-        "confidence": 0.95,
-        "relevance": 1.0
-      },
+    "online experimentation & causal inference at scale": [
       {
         "owner": "Alice",
         "confidence": 0.9,
         "relevance": 1.0
-      },
-      {
-        "owner": "Bob",
-        "confidence": 0.9,
-        "relevance": 0.95
       },
       {
         "owner": "Charlie",
+        "confidence": 0.7,
+        "relevance": 0.9
+      }
+    ],
+    "large-scale ML for ranking/relevance": [
+      {
+        "owner": "Alice",
         "confidence": 0.8,
         "relevance": 0.9
       },
       {
-        "owner": "Charlie",
-        "confidence": 0.6,
-        "relevance": 0.7
-      }
-    ],
-    "large-scale feature engineering": [
-      {
         "owner": "Alice",
         "confidence": 0.7,
-        "relevance": 0.8
+        "relevance": 0.9
       },
       {
         "owner": "Bob",
         "confidence": 0.8,
-        "relevance": 0.85
-      },
-      {
-        "owner": "Charlie",
-        "confidence": 0.7,
-        "relevance": 0.8
+        "relevance": 0.9
       }
     ]
   },
   "collaboration_graph": {
     "Alice": {
-      "Bob": 2,
-      "Charlie": 2
+      "Bob": 1,
+      "Charlie": 1
     },
     "Bob": {
-      "Alice": 2,
-      "Charlie": 2
+      "Alice": 1
     },
     "Charlie": {
-      "Alice": 2,
-      "Bob": 2
+      "Alice": 1
     }
   },
   "risk_areas": [
     {
-      "skill": "large-scale feature engineering",
+      "skill": "online experimentation & causal inference at scale",
       "severity": "LOW",
-      "risk_score": 0.109,
+      "risk_score": 0.142,
       "owners": [
         "Alice",
-        "Bob",
         "Charlie"
       ]
     },
     {
-      "skill": "search relevance metrics & experimentation",
+      "skill": "large-scale ML for ranking/relevance",
       "severity": "LOW",
-      "risk_score": 0.046,
+      "risk_score": 0.105,
       "owners": [
         "Alice",
         "Alice",
-        "Bob",
-        "Charlie",
-        "Charlie"
+        "Bob"
       ]
     }
   ],
   "critical_coverage": {
-    "Alice": 2.41,
-    "Bob": 1.535,
-    "Charlie": 1.7
+    "Alice": 2.25,
+    "Bob": 0.72,
+    "Charlie": 0.63
   },
-  "generated_at": "2026-02-11 10:04:24.329917"
+  "staffing_recommendation": {
+    "experiment_name": "Query-Dependent Ranking Boost via Causal Uplift Modeling",
+    "experiment_description": "Introduce a lightweight, real-time uplift model that estimates the causal impact of boosting newly-launched verticals (jobs, events, local) on long-term query success metrics (CTR, SAT, repeat searches). The model will be trained on 60 days of logged bandit data, adjusted with inverse-propensity scoring, and rolled out as an A/B experiment on 5% of search traffic. Goal: +2% SAT with no regression in core web results.",
+    "recommended_staff": [
+      "Alice",
+      "Bob"
+    ],
+    "mentor_suggestions": {
+      "Bob": "Alice"
+    },
+    "rationale": [
+      "Alice owns both large-scale ML ranking expertise and deep experience in online experimentation & causal inference, making her the ideal technical lead to design the uplift model and analyze the experiment.",
+      "Bob brings complementary large-scale ML engineering skills to implement the feature pipeline and model serving path; pairing him with Alice provides on-the-job mentoring in causal methods."
+    ],
+    "risks": [
+      "No team member besides Alice has strong causal inference background—if she is unavailable, the experiment timeline slips significantly."
+    ],
+    "confidence": 0.85
+  },
+  "generated_at": "2026-02-11 10:21:06.776037"
 }

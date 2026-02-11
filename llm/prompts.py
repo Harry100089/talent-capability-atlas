@@ -64,3 +64,36 @@ Return STRICT JSON list of 3 specific growth recommendations.
   "growth_recommendations": ["Recommendation 1", "Recommendation 2", "Recommendation 3"]
 }}
 """
+
+def staffing_prompt(org_hint, role_target, profiles):
+    return f"""
+You are recommending staffing for a hypothetical new experiment.
+
+Org context: {org_hint}
+Target role: {role_target}
+
+Team capability summaries:
+{profiles}
+
+Your tasks:
+1. Invent a realistic new experiment aligned with the org context.
+2. Recommend 2-3 people from the team to staff it.
+3. Suggest a mentor if someone would benefit from guidance.
+4. Identify risks (skill gaps, single points of failure).
+5. Provide a confidence score (0-1).
+
+Return STRICT JSON:
+
+{{
+  "experiment_name": "string",
+  "experiment_description": "string",
+  "recommended_staff": ["Name1", "Name2"],
+  "mentor_suggestions": {{
+    "Name2": "Name1"
+  }},
+  "rationale": ["reason 1", "reason 2"],
+  "risks": ["risk 1"],
+  "confidence": 0.0
+}}
+"""
+

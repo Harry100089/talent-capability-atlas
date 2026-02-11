@@ -1,6 +1,7 @@
 import json
 from datetime import datetime
 
+from llm.staffing import generate_staffing_recommendation
 from tools.artifacts import MockArtifactAdapter
 from core.planner import TalentPlanner
 from core.risk import compute_domain_ownership, score_risks
@@ -65,14 +66,15 @@ class TalentAtlasEngine:
                 )
             )
 
-            critical_coverage = self.compute_critical_coverage(profiles, role_requirements.critical_skills)
+        critical_coverage = self.compute_critical_coverage(profiles, role_requirements.critical_skills)
 
+        
 
         domain_map = compute_domain_ownership(profiles)
         risks = score_risks(domain_map, role_requirements.critical_skills)
         collaboration = build_collaboration_graph(profiles)
 
-        return CapabilityAtlas(
+        atlas = CapabilityAtlas(
             org_hint=org_hint,
             role_target=role_target,
             role_requirements=role_requirements,
@@ -81,8 +83,15 @@ class TalentAtlasEngine:
             collaboration_graph=collaboration,
             risk_areas=risks,
             critical_coverage=critical_coverage,
+            staffing_recommendation=None,
             generated_at=str(datetime.now()),
         )
+
+        staffing = generate_staffing_recommendation(atlas)
+
+        atlas.staffing_recommendation = staffing
+
+        return atlas
 
     def save(self, atlas):
         with open("capability_atlas.json", "w") as f:
