@@ -1,0 +1,110 @@
+[
+  {
+    "id": "commit-1",
+    "type": "github_commit",
+    "author": "Alice",
+    "repo": "search-ranking",
+    "message": "Refactor BM25 scorer and improve ranking evaluation",
+    "timestamp": "2024-10-02",
+    "url": "https://github.com/org/search-ranking/commit/commit-1"
+  },
+  {
+    "id": "rfc-1",
+    "type": "rfc",
+    "author": "Alice",
+    "title": "Ranking evaluation framework",
+    "summary": "Defines offline metrics and evaluation harness for relevance experiments",
+    "timestamp": "2024-09-15",
+    "url": "https://company.docs.org/rfc/rfc-1"
+  },
+  {
+    "id": "commit-2",
+    "type": "github_commit",
+    "author": "Alice",
+    "repo": "search-ranking",
+    "message": "Add AB test framework for ranking experiments",
+    "timestamp": "2024-10-10",
+    "url": "https://github.com/org/search-ranking/commit/commit-2"
+  },
+  {
+    "id": "commit-3",
+    "type": "github_commit",
+    "author": "Bob",
+    "repo": "search-infra",
+    "message": "Migrate feature pipeline to new deployment infra",
+    "timestamp": "2024-08-20",
+    "url": "https://github.com/org/search-infra/commit/commit-3"
+  },
+  {
+    "id": "ticket-1",
+    "type": "jira_ticket",
+    "assignee": "Bob",
+    "title": "Setup automated evaluation tests",
+    "summary": "Implement NDCG and offline metrics checks for ranking models",
+    "timestamp": "2024-09-10",
+    "url": "https://jira.company.com/browse/TICKET-1"
+  },
+  {
+    "id": "commit-4",
+    "type": "github_commit",
+    "author": "Bob",
+    "repo": "search-infra",
+    "message": "Upgrade deployment scripts and fix CI pipeline",
+    "timestamp": "2024-09-18",
+    "url": "https://github.com/org/search-infra/commit/commit-4"
+  },
+  {
+    "id": "commit-5",
+    "type": "github_commit",
+    "author": "Charlie",
+    "repo": "feature-pipeline",
+    "message": "Refactor pipelines, minor fixes to infrastructure",
+    "timestamp": "2024-07-30",
+    "url": "https://github.com/org/feature-pipeline/commit/commit-5"
+  },
+  {
+    "id": "rfc-2",
+    "type": "rfc",
+    "author": "Charlie",
+    "title": "Evaluation framework for experiments",
+    "summary": "Defines metrics and pipelines for data processing",
+    "timestamp": "2024-08-05",
+    "url": "https://company.docs.org/rfc/rfc-2"
+  },
+  {
+    "id": "ticket-2",
+    "type": "jira_ticket",
+    "assignee": "Charlie",
+    "title": "Data pipeline bug fixes",
+    "summary": "Resolve minor deployment issues affecting evaluation metrics",
+    "timestamp": "2024-08-12",
+    "url": "https://jira.company.com/browse/TICKET-2"
+  },
+  {
+    "id": "commit-6",
+    "type": "github_commit",
+    "author": "Dana",
+    "repo": "search-ranking",
+    "message": "Initial implementation of scoring module",
+    "timestamp": "2024-10-05",
+    "url": "https://github.com/org/search-ranking/commit/commit-6"
+  },
+  {
+    "id": "rfc-3",
+    "type": "rfc",
+    "author": "Dana",
+    "title": "Early stage ranking design",
+    "summary": "Draft document for initial ranking experiments",
+    "timestamp": "2024-10-06",
+    "url": "https://company.docs.org/rfc/rfc-3"
+  },
+  {
+    "id": "ticket-3",
+    "type": "jira_ticket",
+    "assignee": "Dana",
+    "title": "Setup preliminary evaluation pipeline",
+    "summary": "Create initial scripts for ranking tests and offline metrics",
+    "timestamp": "2024-10-08",
+    "url": "https://jira.company.com/browse/TICKET-3"
+  }
+]
