@@ -1,0 +1,377 @@
+{
+  "org_hint": "Search relevance team",
+  "role_target": "Senior Applied Scientist",
+  "profiles": [
+    {
+      "name": "Alice",
+      "skills": [
+        {
+          "skill": "A/B testing",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "source": "github_commit",
+              "id": "commit-2",
+              "snippet": "Add AB test framework",
+              "timestamp": "2024-10-10"
+            },
+            {
+              "source": "github_commit",
+              "id": "commit-1",
+              "snippet": "Add AB test framework",
+              "timestamp": "2024-10-02"
+            },
+            {
+              "source": "rfc",
+              "id": "rfc-1",
+              "snippet": "Add AB test framework",
+              "timestamp": "2024-09-15"
+            }
+          ]
+        },
+        {
+          "skill": "BM25",
+          "confidence": 0.9,
+          "evidence": [
+            {
+              "source": "github_commit",
+              "id": "commit-2",
+              "snippet": "Refactor BM25 scorer",
+              "timestamp": "2024-10-10"
+            },
+            {
+              "source": "github_commit",
+              "id": "commit-1",
+              "snippet": "Refactor BM25 scorer",
+              "timestamp": "2024-10-02"
+            },
+            {
+              "source": "rfc",
+              "id": "rfc-1",
+              "snippet": "Refactor BM25 scorer",
+              "timestamp": "2024-09-15"
+            }
+          ]
+        },
+        {
+          "skill": "ranking evaluation",
+          "confidence": 0.95,
+          "evidence": [
+            {
+              "source": "github_commit",
+              "id": "commit-2",
+              "snippet": "improve ranking evaluation",
+              "timestamp": "2024-10-10"
+            },
+            {
+              "source": "github_commit",
+              "id": "commit-1",
+              "snippet": "improve ranking evaluation",
+              "timestamp": "2024-10-02"
+            },
+            {
+              "source": "rfc",
+              "id": "rfc-1",
+              "snippet": "improve ranking evaluation",
+              "timestamp": "2024-09-15"
+            }
+          ]
+        },
+        {
+          "skill": "offline metrics",
+          "confidence": 0.85,
+          "evidence": [
+            {
+              "source": "github_commit",
+              "id": "commit-2",
+              "snippet": "Defines offline metrics",
+              "timestamp": "2024-10-10"
+            },
+            {
+              "source": "github_commit",
+              "id": "commit-1",
+              "snippet": "Defines offline metrics",
+              "timestamp": "2024-10-02"
+            },
+            {
+              "source": "rfc",
+              "id": "rfc-1",
+              "snippet": "Defines offline metrics",
+              "timestamp": "2024-09-15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bob",
+      "skills": [
+        {
+          "skill": "CI/CD pipeline configuration",
+          "confidence": 0.9,
+          "evidence": [
+            {
+              "source": "github_commit",
+              "id": "commit-4",
+              "snippet": "fix CI pipeline",
+              "timestamp": "2024-09-18"
+            },
+            {
+              "source": "jira_ticket",
+              "id": "ticket-1",
+              "snippet": "fix CI pipeline",
+              "timestamp": "2024-09-10"
+            },
+            {
+              "source": "github_commit",
+              "id": "commit-3",
+              "snippet": "fix CI pipeline",
+              "timestamp": "2024-08-20"
+            }
+          ]
+        },
+        {
+          "skill": "Automated testing",
+          "confidence": 0.85,
+          "evidence": [
+            {
+              "source": "github_commit",
+              "id": "commit-4",
+              "snippet": "Setup automated evaluation tests",
+              "timestamp": "2024-09-18"
+            },
+            {
+              "source": "jira_ticket",
+              "id": "ticket-1",
+              "snippet": "Setup automated evaluation tests",
+              "timestamp": "2024-09-10"
+            },
+            {
+              "source": "github_commit",
+              "id": "commit-3",
+              "snippet": "Setup automated evaluation tests",
+              "timestamp": "2024-08-20"
+            }
+          ]
+        },
+        {
+          "skill": "NDCG metrics",
+          "confidence": 0.9,
+          "evidence": [
+            {
+              "source": "github_commit",
+              "id": "commit-4",
+              "snippet": "Implement NDCG",
+              "timestamp": "2024-09-18"
+            },
+            {
+              "source": "jira_ticket",
+              "id": "ticket-1",
+              "snippet": "Implement NDCG",
+              "timestamp": "2024-09-10"
+            },
+            {
+              "source": "github_commit",
+              "id": "commit-3",
+              "snippet": "Implement NDCG",
+              "timestamp": "2024-08-20"
+            }
+          ]
+        },
+        {
+          "skill": "Ranking models evaluation",
+          "confidence": 0.85,
+          "evidence": [
+            {
+              "source": "github_commit",
+              "id": "commit-4",
+              "snippet": "NDCG and offline metrics checks for ranking models",
+              "timestamp": "2024-09-18"
+            },
+            {
+              "source": "jira_ticket",
+              "id": "ticket-1",
+              "snippet": "NDCG and offline metrics checks for ranking models",
+              "timestamp": "2024-09-10"
+            },
+            {
+              "source": "github_commit",
+              "id": "commit-3",
+              "snippet": "NDCG and offline metrics checks for ranking models",
+              "timestamp": "2024-08-20"
+            }
+          ]
+        },
+        {
+          "skill": "Feature pipeline migration",
+          "confidence": 0.8,
+          "evidence": [
+            {
+              "source": "github_commit",
+              "id": "commit-4",
+              "snippet": "Migrate feature pipeline to new deployment infra",
+              "timestamp": "2024-09-18"
+            },
+            {
+              "source": "jira_ticket",
+              "id": "ticket-1",
+              "snippet": "Migrate feature pipeline to new deployment infra",
+              "timestamp": "2024-09-10"
+            },
+            {
+              "source": "github_commit",
+              "id": "commit-3",
+              "snippet": "Migrate feature pipeline to new deployment infra",
+              "timestamp": "2024-08-20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Charlie",
+      "skills": [
+        {
+          "skill": "Data Pipeline Engineering",
+          "confidence": 0.9,
+          "evidence": [
+            {
+              "source": "jira_ticket",
+              "id": "ticket-2",
+              "snippet": "Resolve minor deployment issues affecting evaluation metrics",
+              "timestamp": "2024-08-12"
+            },
+            {
+              "source": "rfc",
+              "id": "rfc-2",
+              "snippet": "Resolve minor deployment issues affecting evaluation metrics",
+              "timestamp": "2024-08-05"
+            },
+            {
+              "source": "github_commit",
+              "id": "commit-5",
+              "snippet": "Resolve minor deployment issues affecting evaluation metrics",
+              "timestamp": "2024-07-30"
+            }
+          ]
+        },
+        {
+          "skill": "Data Processing",
+          "confidence": 0.85,
+          "evidence": [
+            {
+              "source": "jira_ticket",
+              "id": "ticket-2",
+              "snippet": "Defines metrics and pipelines for data processing",
+              "timestamp": "2024-08-12"
+            },
+            {
+              "source": "rfc",
+              "id": "rfc-2",
+              "snippet": "Defines metrics and pipelines for data processing",
+              "timestamp": "2024-08-05"
+            },
+            {
+              "source": "github_commit",
+              "id": "commit-5",
+              "snippet": "Defines metrics and pipelines for data processing",
+              "timestamp": "2024-07-30"
+            }
+          ]
+        },
+        {
+          "skill": "Infrastructure Refactoring",
+          "confidence": 0.8,
+          "evidence": [
+            {
+              "source": "jira_ticket",
+              "id": "ticket-2",
+              "snippet": "Refactor pipelines, minor fixes to infrastructure",
+              "timestamp": "2024-08-12"
+            },
+            {
+              "source": "rfc",
+              "id": "rfc-2",
+              "snippet": "Refactor pipelines, minor fixes to infrastructure",
+              "timestamp": "2024-08-05"
+            },
+            {
+              "source": "github_commit",
+              "id": "commit-5",
+              "snippet": "Refactor pipelines, minor fixes to infrastructure",
+              "timestamp": "2024-07-30"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "domain_ownership": {
+    "A/B testing": [
+      "Alice"
+    ],
+    "BM25": [
+      "Alice"
+    ],
+    "ranking evaluation": [
+      "Alice"
+    ],
+    "offline metrics": [
+      "Alice"
+    ],
+    "CI/CD pipeline configuration": [
+      "Bob"
+    ],
+    "Automated testing": [
+      "Bob"
+    ],
+    "NDCG metrics": [
+      "Bob"
+    ],
+    "Ranking models evaluation": [
+      "Bob"
+    ],
+    "Feature pipeline migration": [
+      "Bob"
+    ],
+    "Data Pipeline Engineering": [
+      "Charlie"
+    ],
+    "Data Processing": [
+      "Charlie"
+    ],
+    "Infrastructure Refactoring": [
+      "Charlie"
+    ]
+  },
+  "risk_areas": [
+    "A/B testing primarily owned by Alice",
+    "BM25 primarily owned by Alice",
+    "ranking evaluation primarily owned by Alice",
+    "offline metrics primarily owned by Alice",
+    "CI/CD pipeline configuration primarily owned by Bob",
+    "Automated testing primarily owned by Bob",
+    "NDCG metrics primarily owned by Bob",
+    "Ranking models evaluation primarily owned by Bob",
+    "Feature pipeline migration primarily owned by Bob",
+    "Data Pipeline Engineering primarily owned by Charlie",
+    "Data Processing primarily owned by Charlie",
+    "Infrastructure Refactoring primarily owned by Charlie"
+  ],
+  "gaps": [
+    "Machine Learning",
+    "Ranking",
+    "Evaluation",
+    "Infrastructure",
+    "Data Pipelines"
+  ],
+  "recommendations": [
+    "Assign ranking experiments to Alice",
+    "Infra scaling to Bob",
+    "Pipeline reliability to Charlie",
+    "Encourage cross-training on evaluation frameworks"
+  ],
+  "uncertainty_note": "Artifacts limited to top recent items per person. Skill extraction derived from LLM and may contain classification noise.",
+  "growth_summary": "No previous snapshot available.",
+  "generated_at": "2026-02-11 08:05:41.991426"
+}

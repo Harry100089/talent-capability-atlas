@@ -35,6 +35,25 @@ The agent produces a structured `CapabilityAtlas` including:
 
 
 ## How It Works
+Input
+  ↓
+Plan Retrieval
+  ↓
+Budgeted Artifact Fetch
+  ↓
+LLM Skill Extraction
+  ↓
+Skill Normalization
+  ↓
+Ownership Inference
+  ↓
+Collaboration Graph
+  ↓
+Risk & Gap Analysis
+  ↓
+Personalized Growth Plans
+  ↓
+Persist Snapshot
 
 ### 1. Retrieval (Budgeted)
 
@@ -92,6 +111,18 @@ Care was taken so skills are inferred from the mocks and not pre-labeled.
   * Flag newly emerged skills
   * Update risk and ownership signals
 * Designed for periodic execution (e.g., weekly)
+
+## Decision Logic
+### Artifact Budgeting
+* Retrieve top N artifacts per person
+* Prioritize recency
+* RFCs weighted higher for ownership inference
+
+### Ownership Ranking
+* RFC authorship = 3x weight
+* Repeated subsystem commits increase ownership confidence
+### Risk Ranking
+* Domains required for org_hint weighted higher
 
 ## Uncertainty Handling
 
