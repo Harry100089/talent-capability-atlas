@@ -1,5 +1,6 @@
 import json
 from datetime import datetime
+import os
 
 from llm.staffing import generate_staffing_recommendation
 from tools.artifacts import MockArtifactAdapter
@@ -96,3 +97,11 @@ class TalentAtlasEngine:
     def save(self, atlas):
         with open("capability_atlas.json", "w") as f:
             f.write(atlas.model_dump_json(indent=2))
+        
+        # Save version in storage for future refresh strategy
+        os.makedirs("storage", exist_ok=True)
+        timestamp = atlas.generated_at.replace(" ", "_").replace(":", "-")
+        version_file = f"storage/atlas_v{atlas.metadata['version']}_{timestamp}.json"
+        with open(version_file, "w") as f:
+            f.write(atlas.model_dump_json(indent=2))
+        

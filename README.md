@@ -101,6 +101,22 @@ Risk considers:
 Edge weight = number of shared normalized skills.
 Approximates knowledge overlap.
 
+## Refresh Strategy
+
+Profiles can be updated over time by re-running the agent on fresh artifact data.
+
+### Approach
+
+1. **Schedule**: Re-run periodically (e.g., weekly/monthly) to capture new commits, RFCs, and tickets
+2. **Versioning**: Archive outputs with timestamps in `storage/` to track changes
+3. **Delta detection**: Compare skill confidence across runs to identify growth or risk shifts
+4. **Staleness**: Flag people with no recent artifacts (>30 days) as potential coverage gaps
+
+### Future Work to Improve refresh / learning
+- Automated diff comparison across versions
+- Scheduled refresh via cron
+- Alerts on risk elevation (e.g., single-owner skills becoming unavailable)
+
 ---
 
 # Assumptions / Mocks
